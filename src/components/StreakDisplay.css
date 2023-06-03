@@ -16,3 +16,6 @@
     width: 26px;
     padding-right: 7px;
 }
+.streak-box>h3{
+    color: gray;
+}
