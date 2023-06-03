@@ -1,0 +1,104 @@
+.body-heatmap{
+        width:350px;
+        height:300px;
+        object-fit: cover;
+        background-color: black;
+        color: white;
+        scroll-snap-align: end;
+}
+
+.body-mask{
+    height:300px;
+    z-index: 1;
+}
+
+.body-part{
+    z-index: 99;
+    position: relative;
+    top:-300px;
+    width:24px;
+    height:24px;
+    background-color: white;
+    border: 1px solid black;
+}
+.body-part:hover{
+    transform: scale(1.05);
+}
+.head{
+    left: 151px;
+    height:44px;
+    width:44px;
+    top:-288px;
+    border-radius: 50%;
+}
+.chest{
+    left: 144px;
+    width: 60px;
+    height:60px;
+    top:-280px;
+}
+.heart{
+    left:173px;
+    top: -332px;
+    border-radius: 50%;
+}
+.bicep-l{
+    left: 118px;
+    top: -368px;
+    height: 55px;
+    border-top-left-radius: 12px;
+}
+.bicep-r{
+    left: 206px;
+    top: -425px;
+    height: 55px;
+    border-top-right-radius: 12px;
+}
+.forearm-l{
+    left: 118px;
+    top: -425px;
+    height: 45px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.forearm-r{
+    left: 206px;
+    top: -472px;
+    height: 45px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.abs{
+    left: 144px;
+    top: -514px;
+    width:60px;
+    height: 38px;
+}
+.thigh-l{
+    left: 144px;
+    top: -514px;
+    width: 29px;
+    height: 55px;
+}
+.thigh-r{
+    left: 175px;
+    top: -571px;
+    width: 29px;
+    height: 55px;
+}
+.calf-l{
+    left: 144px;
+    top: -571px;
+    width: 29px;
+    height: 55px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 14px;
+}
+.calf-r{
+    left: 175px;
+    top: -628px;
+    width: 29px;
+    height: 55px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 15px;
+}

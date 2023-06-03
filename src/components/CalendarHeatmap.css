@@ -1,0 +1,8 @@
+.calendar-heatmap{
+    width:350px;
+    height:300px;
+    object-fit: cover;
+    background-color: black;
+    color: white;
+    scroll-snap-align: start;
+}
