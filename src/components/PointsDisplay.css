@@ -1,0 +1,11 @@
+
+.xp-display{
+    display: flex;
+    align-items: center;
+    width: 40px;
+    margin-left: -28px;
+}
+.xp{
+    font-size: 23px;
+    padding-right: 7px;
+}

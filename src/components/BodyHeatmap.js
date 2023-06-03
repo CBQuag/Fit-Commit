@@ -5,7 +5,7 @@ const BodyHeatmap =() => {
     
     return (
         <div className='body-heatmap'>
-            <img className='body-mask' src={require('../body-mask.png')} alt="body-mask" srcset="" />
+            {/* <img className='body-mask' src={require('../body-mask.png')} alt="body-mask" srcset="" /> */}
             <div className="body-part head"></div>
             <div className="body-part chest"></div>
             <div className="body-part heart"></div>

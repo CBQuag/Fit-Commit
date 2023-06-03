@@ -1,10 +1,10 @@
-
+import './AccountDisplay.css'
 
 const AccountDisplay = () => {
     
     return (
         <div>
-            Account
+            <img className='account' src={require('../account-25-256.png')} alt="" srcset="" />
         </div>
     )
 }

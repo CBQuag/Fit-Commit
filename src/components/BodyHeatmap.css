@@ -2,7 +2,7 @@
         width:350px;
         height:300px;
         object-fit: cover;
-        background-color: black;
+        background-color: rgb(23, 23, 27);
         color: white;
         scroll-snap-align: end;
 }
@@ -13,9 +13,9 @@
 }
 
 .body-part{
+    border-radius: 4px;
     z-index: 99;
     position: relative;
-    top:-300px;
     width:24px;
     height:24px;
     background-color: white;
@@ -28,67 +28,68 @@
     left: 151px;
     height:44px;
     width:44px;
-    top:-288px;
+    top:12px;
     border-radius: 50%;
 }
 .chest{
     left: 144px;
     width: 60px;
     height:60px;
-    top:-280px;
+    top:20px;
 }
 .heart{
     left:173px;
-    top: -332px;
-    border-radius: 50%;
+    top: -34px;
+    border-radius: 40%;
+    border: 2px solid black;
 }
 .bicep-l{
     left: 118px;
-    top: -368px;
+    top: -70px;
     height: 55px;
     border-top-left-radius: 12px;
 }
 .bicep-r{
     left: 206px;
-    top: -425px;
+    top: -127px;
     height: 55px;
     border-top-right-radius: 12px;
 }
 .forearm-l{
     left: 118px;
-    top: -425px;
+    top: -127px;
     height: 45px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 .forearm-r{
     left: 206px;
-    top: -472px;
+    top: -174px;
     height: 45px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 .abs{
     left: 144px;
-    top: -514px;
+    top: -216px;
     width:60px;
     height: 38px;
 }
 .thigh-l{
     left: 144px;
-    top: -514px;
+    top: -216px;
     width: 29px;
     height: 55px;
 }
 .thigh-r{
     left: 175px;
-    top: -571px;
+    top: -273px;
     width: 29px;
     height: 55px;
 }
 .calf-l{
     left: 144px;
-    top: -571px;
+    top: -273px;
     width: 29px;
     height: 55px;
     border-bottom-left-radius: 15px;
@@ -96,7 +97,7 @@
 }
 .calf-r{
     left: 175px;
-    top: -628px;
+    top: -330px;
     width: 29px;
     height: 55px;
     border-bottom-left-radius: 14px;
