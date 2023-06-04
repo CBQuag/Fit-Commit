@@ -7,13 +7,17 @@ const BodyHeatmap = () => {
     
     const { fitData } = useContext(FitnessData)
     const [bodyData, setBodyData] = useState([])
-    const [intensity, setIntensity]=useState(0.5)
+    const [intensity, setIntensity] = useState(1)
+    
+    //128*value=maximum minutes
+    //maximum minutes/128=value
     
     useEffect(() => {
         if (!fitData[0])
             return;
         setBodyData(fitData)
-    },[])
+        setIntensityByMinutes(180)
+    }, [])
 
     let bodyParts = {
         head: 0,
@@ -25,6 +29,12 @@ const BodyHeatmap = () => {
         upperLegs: 0,
         lowerLegs: 0
     };
+
+    const setIntensityByMinutes = minutes => {
+        let intensityValue = 128/minutes;
+        setIntensity(intensityValue)
+    }
+    
 
     const setBodyHeat = data => {
         data.forEach(log => {
