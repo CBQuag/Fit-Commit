@@ -7,6 +7,7 @@ const BodyHeatmap = () => {
     
     const { fitData } = useContext(FitnessData)
     const [bodyData, setBodyData] = useState([])
+    const [intensity, setIntensity]=useState(0.5)
     
     useEffect(() => {
         if (!fitData[0])
@@ -55,8 +56,6 @@ const BodyHeatmap = () => {
         });
     }
     setBodyHeat(bodyData)
-
-    const intensity = 1 / 2;
 
     const convertToHeat = (level, modifier) => {
         let rgbValue=128+level*intensity*(modifier?modifier:1)
