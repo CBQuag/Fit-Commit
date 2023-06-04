@@ -18,6 +18,7 @@
 .info-box{
     display: flex;
     align-items: center;
+    height: 55px;
 }
 
 .time-box{
