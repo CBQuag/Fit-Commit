@@ -24,6 +24,7 @@ const BodyHeatmap = () => {
         upperLegs: 0,
         lowerLegs: 0
     };
+
     const setBodyHeat = data => {
         data.forEach(log => {
             switch (log.category) {
@@ -61,47 +62,21 @@ const BodyHeatmap = () => {
         let rgbValue=128+level*intensity*(modifier?modifier:1)
         return `rgb(${rgbValue},${rgbValue},${rgbValue})`
     }
-
-
-    const headHeat = {
-        backgroundColor:convertToHeat(bodyParts.head)
-    }
-    const chestHeat = {
-        backgroundColor:convertToHeat(bodyParts.chest)
-    }
-    const heartHeat = {
-        backgroundColor:convertToHeat(bodyParts.heart)
-    }
-    const upperArmHeat = {
-        backgroundColor:convertToHeat(bodyParts.upperArms)
-    }
-    const forearmsHeat = {
-        backgroundColor:convertToHeat(bodyParts.forearms)
-    }
-    const absHeat = {
-        backgroundColor:convertToHeat(bodyParts.abs)
-    }
-    const upperLegHeat = {
-        backgroundColor:convertToHeat(bodyParts.upperLegs)
-    }
-    const lowerLegHeat = {
-        backgroundColor:convertToHeat(bodyParts.lowerLegs)
-    }
     
     return (
         <div className='body-heatmap'>
-            <div style={headHeat} className="body-part head"></div>
-            <div style={chestHeat} className="body-part chest"></div>
-            <div style={heartHeat} className="body-part heart"></div>
-            <div style={upperArmHeat} className="body-part upper-arm-l"></div>
-            <div style={upperArmHeat} className="body-part upper-arm-r"></div>
-            <div style={forearmsHeat} className="body-part forearm-l"></div>
-            <div style={forearmsHeat} className="body-part forearm-r"></div>
-            <div style={absHeat} className="body-part abs"></div>
-            <div style={upperLegHeat} className="body-part upper-leg-l"></div>
-            <div style={upperLegHeat} className="body-part upper-leg-r"></div>
-            <div style={lowerLegHeat} className="body-part lower-leg-l"></div>
-            <div style={lowerLegHeat} className="body-part lower-leg-r"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.head)}}        className="body-part head"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.chest)}}       className="body-part chest"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.heart)}}       className="body-part heart"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.upperArms)}}   className="body-part upper-arm-l"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.upperArms)}}   className="body-part upper-arm-r"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.forearms)}}    className="body-part forearm-l"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.forearms)}}    className="body-part forearm-r"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.abs)}}         className="body-part abs"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.upperLegs)}}   className="body-part upper-leg-l"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.upperLegs)}}   className="body-part upper-leg-r"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.lowerLegs)}}   className="body-part lower-leg-l"></div>
+            <div style={{backgroundColor:convertToHeat(bodyParts.lowerLegs)}}   className="body-part lower-leg-r"></div>
         </div>
     )
 }
