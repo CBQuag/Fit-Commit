@@ -1,12 +1,4 @@
-import './'
+import { createContext } from "react";
 
-const =() => {
-    
-    return (
-        <div>
-
-        </div>
-    )
-}
-
-export default 
+const FitnessData = createContext();
+export default FitnessData;

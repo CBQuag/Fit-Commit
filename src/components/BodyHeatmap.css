@@ -1,10 +1,10 @@
 .body-heatmap{
-        width:350px;
-        height:300px;
-        object-fit: cover;
-        background-color: rgb(23, 23, 27);
-        color: white;
-        scroll-snap-align: end;
+    width:350px;
+    height:300px;
+    object-fit: cover;
+    background-color: rgb(23, 23, 27);
+    color: white;
+    scroll-snap-align: end;
 }
 
 .body-mask{
@@ -14,11 +14,10 @@
 
 .body-part{
     border-radius: 4px;
-    z-index: 99;
     position: relative;
     width:24px;
     height:24px;
-    background-color: white;
+    background-color: gray;
     border: 1px solid black;
 }
 .body-part:hover{
@@ -43,13 +42,13 @@
     border-radius: 40%;
     border: 2px solid black;
 }
-.bicep-l{
+.upper-arm-l{
     left: 118px;
     top: -70px;
     height: 55px;
     border-top-left-radius: 12px;
 }
-.bicep-r{
+.upper-arm-r{
     left: 206px;
     top: -127px;
     height: 55px;
@@ -75,19 +74,19 @@
     width:60px;
     height: 38px;
 }
-.thigh-l{
+.upper-leg-l{
     left: 144px;
     top: -216px;
     width: 29px;
     height: 55px;
 }
-.thigh-r{
+.upper-leg-r{
     left: 175px;
     top: -273px;
     width: 29px;
     height: 55px;
 }
-.calf-l{
+.lower-leg-l{
     left: 144px;
     top: -273px;
     width: 29px;
@@ -95,7 +94,7 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 14px;
 }
-.calf-r{
+.lower-leg-r{
     left: 175px;
     top: -330px;
     width: 29px;

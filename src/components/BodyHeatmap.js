@@ -9,15 +9,15 @@ const BodyHeatmap =() => {
             <div className="body-part head"></div>
             <div className="body-part chest"></div>
             <div className="body-part heart"></div>
-            <div className="body-part bicep-l"></div>
-            <div className="body-part bicep-r"></div>
+            <div className="body-part upper-arm-l"></div>
+            <div className="body-part upper-arm-r"></div>
             <div className="body-part forearm-l"></div>
             <div className="body-part forearm-r"></div>
             <div className="body-part abs"></div>
-            <div className="body-part thigh-l"></div>
-            <div className="body-part thigh-r"></div>
-            <div className="body-part calf-l"></div>
-            <div className="body-part calf-r"></div>
+            <div className="body-part upper-leg-l"></div>
+            <div className="body-part upper-leg-r"></div>
+            <div className="body-part lower-leg-l"></div>
+            <div className="body-part lower-leg-r"></div>
         </div>
     )
 }

@@ -8,4 +8,7 @@
     background-color: gray;
     color: white;
     border-radius: 10px;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(69, 69, 69); */
+    font-size: 20px;
 }
