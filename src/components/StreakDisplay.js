@@ -7,28 +7,27 @@ const StreakDisplay = () => {
     const { datediff } = useContext(FitnessData)
     const { fitData } = useContext(FitnessData)
 
-    let streakOn = {display:'none'};
-    let streakOff = { display: 'block' };
     const [totalStreak, setStreak] = useState(0);
+    const [streakOn, setStreakOn] = useState({ display: 'none' })
+    const [streakOff, setStreakOff]=useState({display:'block'})
 
     useEffect(() => {
-        if (!fitData)
+        if (!fitData[0])
             return
-        switchTheLights(fitData)
-        getStreak(fitData)
+        switchTheLights(fitData)    
     },[])
     
     const switchTheLights = data => {
         let convertedDate=new Date(data[0].time)
         let daysSince = datediff(convertedDate, Date.now())
         if (daysSince < 1) {
-            streakOn = { display: 'block' }
-            streakOff = { display: 'none' }
-            
+            setStreakOn({ display: 'block' })
+            setStreakOff({ display: 'none' })
+            getStreak(fitData)
         }
         if (daysSince > 1) {
-            streakOn = { display: 'none' }
-            streakOff = { display: 'block' }
+            setStreakOn({ display: 'none' })
+            setStreakOff({ display: 'block' })
         }
     }
 
@@ -45,10 +44,7 @@ const StreakDisplay = () => {
         }
         setStreak(prevDay)
     }
-
-    if (fitData) {
-        switchTheLights(fitData)
-    }     
+   
     
     return (
         <div className='streak-box'>

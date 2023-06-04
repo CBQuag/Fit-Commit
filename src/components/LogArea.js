@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import FitnessData from './FitnessData'
 import Log from './Log'
 import './LogArea.css'
@@ -6,19 +6,24 @@ import './LogArea.css'
 const LogArea = () => {
 
     const { fitData } = useContext(FitnessData)
+    const [content, setContent] = useState([])
+    
+    useEffect(() => {
+       setContent(fitData) 
+    },[])
     
     return (
         <div className='log-area'>
-            {fitData.map(logData => (
+            {content[0]?content.map(logData => (
                 <Log
-                    key={fitData.indexOf(logData)}
+                    key={content.indexOf(logData)}
                     time={logData.time}
                     category={logData.category}
                     muscles={logData.muscles}
                     title={logData.title}
                     duration={logData.duration}
                     notes={logData.notes} />
-            ))}
+            )):null}
             
         </div>
     )

@@ -9,6 +9,8 @@ const PointsDisplay = () => {
     const [points, setPoints] = useState(0)
 
     useEffect(() => {
+        if (!fitData[0])
+            return
         determinePoints(fitData)
     },[])
     
