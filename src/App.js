@@ -14,12 +14,14 @@ function App() {
   const [fitData, setFitData] = useState([{
     time: date1.toString(),
     category: 'abs',
+    muscles:['lower abs'],
     title: 'crunches',
     duration: 27,
     notes:'basic crunches'
   },
   {time: date2.toString(),
   category: 'upper arms',
+  muscles:['biceps'],
   title: 'very long title this is a long title this is to test long titles',
   duration: 327,
   notes:'basic crunches'}])

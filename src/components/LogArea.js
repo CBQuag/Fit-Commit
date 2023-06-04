@@ -14,6 +14,7 @@ const LogArea = () => {
                     key={logData.title}
                     time={logData.time}
                     category={logData.category}
+                    muscles={logData.muscles}
                     title={logData.title}
                     duration={logData.duration}
                     notes={logData.notes} />
