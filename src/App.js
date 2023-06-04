@@ -12,6 +12,7 @@ function App() {
   let date1 = new Date(2023, 5, 4);
   let date2 = new Date(2023, 5, 3);
   let date3 = new Date(2023, 5, 1);
+  const [bodySelection, setBodyPart]=useState('')
   const [fitData, setFitData] = useState([
     {
       time: date1.toString(),
@@ -43,10 +44,15 @@ function App() {
     return Math.round((second - first) / (1000 * 60 * 60 * 24))-1;
   }
 
+  function selectForInfo(info) {
+    if (info == bodySelection)
+      return setBodyPart('')
+    setBodyPart(info)
+  }
 
   return (
 
-    <FitnessData.Provider value={{ fitData, setFitData, datediff }}>
+    <FitnessData.Provider value={{ fitData, setFitData, datediff, selectForInfo, bodySelection}}>
       <div className="App">
         <Header />
         <MainArea/>
