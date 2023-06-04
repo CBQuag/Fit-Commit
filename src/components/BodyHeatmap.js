@@ -55,34 +55,37 @@ const BodyHeatmap = () => {
     }
     setBodyHeat(bodyData)
 
+    const intensity = 1 / 2;
+
     const convertToHeat = (level, modifier) => {
-        let rgbValue=128+level*modifier
+        let rgbValue=128+level*intensity*(modifier?modifier:1)
         return `rgb(${rgbValue},${rgbValue},${rgbValue})`
     }
 
+
     const headHeat = {
-        backgroundColor:convertToHeat(bodyParts.head, 1/2)
+        backgroundColor:convertToHeat(bodyParts.head)
     }
     const chestHeat = {
-        backgroundColor:convertToHeat(bodyParts.chest, 1/2)
+        backgroundColor:convertToHeat(bodyParts.chest)
     }
     const heartHeat = {
-        backgroundColor:convertToHeat(bodyParts.heart, 1/2)
+        backgroundColor:convertToHeat(bodyParts.heart)
     }
     const upperArmHeat = {
-        backgroundColor:convertToHeat(bodyParts.upperArms, 1/2)
+        backgroundColor:convertToHeat(bodyParts.upperArms)
     }
     const forearmsHeat = {
-        backgroundColor:convertToHeat(bodyParts.forearms, 1/2)
+        backgroundColor:convertToHeat(bodyParts.forearms)
     }
     const absHeat = {
-        backgroundColor:convertToHeat(bodyParts.abs, 1/2)
+        backgroundColor:convertToHeat(bodyParts.abs)
     }
     const upperLegHeat = {
-        backgroundColor:convertToHeat(bodyParts.upperLegs, 1/2)
+        backgroundColor:convertToHeat(bodyParts.upperLegs)
     }
     const lowerLegHeat = {
-        backgroundColor:convertToHeat(bodyParts.lowerLegs, 1/2)
+        backgroundColor:convertToHeat(bodyParts.lowerLegs)
     }
     
     return (

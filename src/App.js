@@ -18,7 +18,7 @@ function App() {
       category: 'abs',
       muscles:['lower abs'],
       title: 'crunches',
-      duration: 27,
+      duration: 9,
       notes:'basic crunches'
     },
     {
