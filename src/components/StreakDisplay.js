@@ -42,7 +42,7 @@ const StreakDisplay = () => {
             else
                 break;
         }
-        setStreak(prevDay)
+        setStreak(prevDay+1)
     }
    
     

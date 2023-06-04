@@ -1,11 +1,19 @@
 import './BodyHeatmap.css'
 import '../body-mask.png'
 import FitnessData from './FitnessData'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 const BodyHeatmap = () => {
     
     const { fitData } = useContext(FitnessData)
+    const [bodyData, setBodyData] = useState([])
+    
+    useEffect(() => {
+        if (!fitData[0])
+            return;
+        setBodyData(fitData)
+    },[])
+
     let bodyParts = {
         head: 0,
         chest: 0,
@@ -16,33 +24,36 @@ const BodyHeatmap = () => {
         upperLegs: 0,
         lowerLegs: 0
     };
-    fitData.forEach(log => {
-        switch (log.category) {
-            case 'chest':
-                bodyParts.chest+=log.duration;
-                break;
-            case 'heart':
-                bodyParts.heart += log.duration;
-                break;
-            case 'upper arms':
-                bodyParts.upperArms+=log.duration;
-                break;
-            case 'forearms':
-                bodyParts.forearms+=log.duration;
-                break;
-            case 'abs':
-                bodyParts.abs+=log.duration;
-                break;
-            case 'upper legs':
-                bodyParts.upperLegs+=log.duration;
-                break;
-            case 'lower legs':
-                bodyParts.lowerLegs+=log.duration;
-                break;
-            default:
-                break;
-        }
-    });
+    const setBodyHeat = data => {
+        data.forEach(log => {
+            switch (log.category) {
+                case 'chest':
+                    bodyParts.chest+=log.duration;
+                    break;
+                case 'heart':
+                    bodyParts.heart += log.duration;
+                    break;
+                case 'upper arms':
+                    bodyParts.upperArms+=log.duration;
+                    break;
+                case 'forearms':
+                    bodyParts.forearms+=log.duration;
+                    break;
+                case 'abs':
+                    bodyParts.abs+=log.duration;
+                    break;
+                case 'upper legs':
+                    bodyParts.upperLegs+=log.duration;
+                    break;
+                case 'lower legs':
+                    bodyParts.lowerLegs+=log.duration;
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+    setBodyHeat(bodyData)
 
     const convertToHeat = (level, modifier) => {
         let rgbValue=128+level*modifier
