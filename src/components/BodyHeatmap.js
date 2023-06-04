@@ -8,10 +8,7 @@ const BodyHeatmap = () => {
     const { fitData } = useContext(FitnessData)
     const [bodyData, setBodyData] = useState([])
     const [intensity, setIntensity] = useState(1)
-    
-    //128*value=maximum minutes
-    //maximum minutes/128=value
-    
+
     useEffect(() => {
         if (!fitData[0])
             return;
