@@ -11,7 +11,7 @@ const LogArea = () => {
         <div className='log-area'>
             {fitData.map(logData => (
                 <Log
-                    key={logData.title}
+                    key={fitData.indexOf(logData)}
                     time={logData.time}
                     category={logData.category}
                     muscles={logData.muscles}

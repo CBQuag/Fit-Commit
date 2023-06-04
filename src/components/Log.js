@@ -1,16 +1,15 @@
+import { useContext } from 'react'
+import FitnessData from './FitnessData'
 import './Log.css'
 
 const Log = (props) => {
 
-    function datediff(first, second) {        
-        return Math.round((second - first) / (1000 * 60 * 60 * 24))-1;
-    }
+    const {datediff}=useContext(FitnessData)
 
     const convertDate = date => {
         
-        let today = Date.now()
         let convertedDate = new Date(date)
-        let daysSince = datediff(convertedDate, today)
+        let daysSince = datediff(convertedDate, Date.now())
         if (daysSince < 0)
             return `Invalid Date`
         if (daysSince < 1)
@@ -29,9 +28,9 @@ const Log = (props) => {
     const convertTime = time => {
         let hours = Math.floor(time / 60);
         let minutes = time % 60
-        // let hourString=`${hours?`${hours} ${hours==1?`hour`:`hours`}, `:``}`
-        // let minuteString=`${minutes?`${minutes} ${minutes==1?`minute`:`minutes`}`:``}`
-        return `${hours?`${hours}:`:``}${minutes?minutes:``}`
+        let convertedMinutes =
+            `${minutes?hours?`${minutes}`.length==1?`0${minutes}`:minutes:minutes:``}`        
+        return `${hours?`${hours}:`:``}${convertedMinutes}`
     }
     
     return (

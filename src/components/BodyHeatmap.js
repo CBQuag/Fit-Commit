@@ -22,7 +22,7 @@ const BodyHeatmap = () => {
                 bodyParts.chest+=log.duration;
                 break;
             case 'heart':
-                bodyParts.heart+=log.duration;
+                bodyParts.heart += log.duration;
                 break;
             case 'upper arms':
                 bodyParts.upperArms+=log.duration;
@@ -43,7 +43,6 @@ const BodyHeatmap = () => {
                 break;
         }
     });
-    console.log(bodyParts)
 
     const convertToHeat = (level, modifier) => {
         let rgbValue=128+level*modifier
@@ -51,28 +50,28 @@ const BodyHeatmap = () => {
     }
 
     const headHeat = {
-        backgroundColor:convertToHeat(bodyParts.head, 1)
+        backgroundColor:convertToHeat(bodyParts.head, 1/2)
     }
     const chestHeat = {
-        backgroundColor:convertToHeat(bodyParts.chest, 1)
+        backgroundColor:convertToHeat(bodyParts.chest, 1/2)
     }
     const heartHeat = {
-        backgroundColor:convertToHeat(bodyParts.heart, 1)
+        backgroundColor:convertToHeat(bodyParts.heart, 1/2)
     }
     const upperArmHeat = {
-        backgroundColor:convertToHeat(bodyParts.upperArms, 1)
+        backgroundColor:convertToHeat(bodyParts.upperArms, 1/2)
     }
     const forearmsHeat = {
-        backgroundColor:convertToHeat(bodyParts.forearms, 1)
+        backgroundColor:convertToHeat(bodyParts.forearms, 1/2)
     }
     const absHeat = {
-        backgroundColor:convertToHeat(bodyParts.abs, 1)
+        backgroundColor:convertToHeat(bodyParts.abs, 1/2)
     }
     const upperLegHeat = {
-        backgroundColor:convertToHeat(bodyParts.upperLegs, 1)
+        backgroundColor:convertToHeat(bodyParts.upperLegs, 1/2)
     }
     const lowerLegHeat = {
-        backgroundColor:convertToHeat(bodyParts.lowerLegs, 1)
+        backgroundColor:convertToHeat(bodyParts.lowerLegs, 1/2)
     }
     
     return (
