@@ -5,13 +5,11 @@
     width: 45px;
 }
 .streak-on{
-    display: none;
     height: 32px;
     width: 26px;
     padding-right: 7px;
 }
 .streak-off{
-    /* display: none; */
     height: 32px;
     width: 26px;
     padding-right: 7px;

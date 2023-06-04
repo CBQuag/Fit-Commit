@@ -9,7 +9,8 @@ const StreakDisplay = () => {
 
     const [totalStreak, setStreak] = useState(0);
     const [streakOn, setStreakOn] = useState({ display: 'none' })
-    const [streakOff, setStreakOff]=useState({display:'block'})
+    const [streakOff, setStreakOff] = useState({ display: 'block' })
+    const [isStreak, setIfStreak]=useState({color:`gray`})
 
     useEffect(() => {
         if (!fitData[0])
@@ -23,7 +24,8 @@ const StreakDisplay = () => {
         if (daysSince < 1) {
             setStreakOn({ display: 'block' })
             setStreakOff({ display: 'none' })
-            getStreak(fitData)
+            setIfStreak({color:`white`})
+            getStreak(fitData)       
         }
         if (daysSince > 1) {
             setStreakOn({ display: 'none' })
@@ -45,11 +47,12 @@ const StreakDisplay = () => {
         setStreak(prevDay+1)
     }
    
-    
+
     return (
         <div className='streak-box'>
             <img style={streakOff} className='streak-off' src={require('../streak-off.png')} alt="" />
-            <img style={streakOn} className='streak-on' src={require('../streak-on.png')} alt="" /> <h3>{totalStreak}</h3>
+            <img style={streakOn} className='streak-on' src={require('../streak-on.png')} alt="" />
+            <h3 style={isStreak}>{totalStreak}</h3>
         </div>
     )
 }
