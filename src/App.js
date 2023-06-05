@@ -27,7 +27,7 @@ function App() {
       category: 'upper arms',
       muscles:['biceps'],
       title: 'very long title this is a long title this is to test long titles',
-      duration: 307,
+      duration: 247,
       notes: 'idk'
     },
     {
