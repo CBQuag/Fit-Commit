@@ -5,12 +5,12 @@ import './LogArea.css'
 
 const LogArea = () => {
 
-    const { fitData } = useContext(FitnessData)
+    const { fitData, bodySelection } = useContext(FitnessData)
     const [content, setContent] = useState([])
     
     useEffect(() => {
-       setContent(fitData) 
-    },[])
+       setContent(bodySelection?fitData.filter(data=>(data.category==bodySelection)):fitData) 
+    },[bodySelection])
     
     return (
         <div className='log-area'>
