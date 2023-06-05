@@ -15,7 +15,8 @@ const StreakDisplay = () => {
     useEffect(() => {
         if (!fitData[0])
             return
-        switchTheLights(fitData)    
+        switchTheLights(fitData) 
+        getStreak(fitData)   
     },[])
     
     const switchTheLights = data => {
@@ -23,8 +24,7 @@ const StreakDisplay = () => {
         if (daysSince < 1) {
             setStreakOn({ display: 'block' })
             setStreakOff({ display: 'none' })
-            setIfStreak({color:`white`})
-            getStreak(fitData)       
+            setIfStreak({color:`white`})                
         }
         if (daysSince > 1) {
             setStreakOn({ display: 'none' })
@@ -35,15 +35,20 @@ const StreakDisplay = () => {
     const getStreak = data => {
         let prevDay = 0;
         let daysSince = 0;
+        let noStreak = 0;
+        if (datediff(data[0].time, Date.now()) > 1)
+            return setStreak(0)
+        if (datediff(data[0].time, Date.now()) == 1)
+            noStreak=1
         for (let x = 0; x < data.length; x++){
-            let convertedDate = new Date(data[x].time)
-            daysSince= datediff(convertedDate, Date.now())
+            daysSince = datediff(data[x].time, Date.now())
+            
             if (daysSince - prevDay < 2)
                 prevDay = daysSince
             else
                 break;
         }
-        setStreak(prevDay+1)
+        setStreak(prevDay+1-noStreak)
     }
    
 
