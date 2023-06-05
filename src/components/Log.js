@@ -28,8 +28,10 @@ const Log = (props) => {
     const convertTime = time => {
         let hours = Math.floor(time / 60);
         let minutes = time % 60
-        let convertedMinutes =
-            `${minutes?hours?`${minutes}`.length==1?`0${minutes}`:minutes:minutes:``}`        
+        let convertedMinutes;
+        convertedMinutes =
+            `${minutes ? hours ? `${minutes}`.length == 1 ? `0${minutes}` : minutes : minutes : `00`}`    
+        
         return `${hours?`${hours}:`:``}${convertedMinutes}`
     }
     
