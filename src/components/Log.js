@@ -14,6 +14,8 @@ const Log = (props) => {
             return `Today`
         if (daysSince == 1)
             return `Yesterday`
+        if (daysSince > 364)
+            return Math.floor(daysSince/365)+`${daysSince>729?' Years':' Year'}`
         return daysSince+' Days'
     }
 
