@@ -1,12 +1,14 @@
-import './'
+import './SubmitBox.css'
 
-const =() => {
+const SubmitBox = (props) => {
+    
+
     
     return (
-        <div>
-
+        <div className='submit-box' style={{display:props.isActive}}>
+            Submission boxes here
         </div>
     )
 }
 
-export default 
+export default SubmitBox
