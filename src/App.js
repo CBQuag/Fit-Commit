@@ -40,8 +40,9 @@ function App() {
     }
   ])
   
-  function datediff(first, second) {        
-    return Math.round((second - first) / (1000 * 60 * 60 * 24))-1;
+  function datediff(first, second) {
+    let convertedDate = new Date(first)
+    return Math.round((second - convertedDate) / (1000 * 60 * 60 * 24))-1;
   }
 
   function selectForInfo(info) {

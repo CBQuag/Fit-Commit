@@ -7,9 +7,7 @@ const Log = (props) => {
     const {datediff}=useContext(FitnessData)
 
     const convertDate = date => {
-        
-        let convertedDate = new Date(date)
-        let daysSince = datediff(convertedDate, Date.now())
+        let daysSince = datediff(date, Date.now())
         if (daysSince < 0)
             return `Invalid Date`
         if (daysSince < 1)

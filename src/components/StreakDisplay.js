@@ -19,8 +19,7 @@ const StreakDisplay = () => {
     },[])
     
     const switchTheLights = data => {
-        let convertedDate=new Date(data[0].time)
-        let daysSince = datediff(convertedDate, Date.now())
+        let daysSince = datediff(data[0].time, Date.now())
         if (daysSince < 1) {
             setStreakOn({ display: 'block' })
             setStreakOff({ display: 'none' })
