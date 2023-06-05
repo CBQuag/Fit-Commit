@@ -106,7 +106,9 @@ const BodyHeatmap = () => {
                 onClick={()=>selectForInfo('lower legs')}></div>
             <div style={{ backgroundColor: convertToHeat(bodyParts.lowerLegs) }}
                 className="body-part lower-leg-r"
-                onClick={()=>selectForInfo('lower legs')}></div>
+                onClick={() => selectForInfo('lower legs')}></div>
+            <div className='bg'
+                onClick={() => selectForInfo('')}></div>
         </div>
     )
 }

@@ -19,6 +19,7 @@
     height:24px;
     background-color: gray;
     border: 1px solid black;
+    z-index: 2;
 }
 .body-part:hover{
     transform: scale(1.05);
@@ -101,4 +102,12 @@
     height: 55px;
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 15px;
+}
+
+.bg{
+    position: relative;
+    top: -660px;
+    width: 350px;
+    height: 350px;
+    z-index: 1;
 }
