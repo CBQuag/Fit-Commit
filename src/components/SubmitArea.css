@@ -1,6 +1,6 @@
 .submit-area{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 15px;
     width: 300px;
@@ -11,4 +11,15 @@
     /* -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(69, 69, 69); */
     font-size: 20px;
+}
+.submit-area>:nth-child(3){
+    width: 5px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+.submit-area>:nth-child(1){
+    width: 5px;
+    padding-left: 20px;
 }
