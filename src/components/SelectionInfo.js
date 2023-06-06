@@ -13,7 +13,7 @@ const SelectionInfo = () => {
     
     return (
         <div style={info ? { display: 'block' }:{display:'none'}} className="selection-info">
-            {bodySelection}
+            {bodySelection=='heart'?'cardio':bodySelection}
         </div>
     )
 }

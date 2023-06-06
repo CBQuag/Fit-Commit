@@ -37,14 +37,14 @@ const SubmitBox = (props) => {
                 </div>
             </div>
             <div className='details-submit'>
-                <button onClick={()=>{switchActive()}}>{details[1]} details</button>
+                <button className='detail-button' onClick={()=>{switchActive()}}>{details[1]} details</button>
                 <div className='details' style={{ display: details[0] }}>
                     <div>
                         <input className='muscles' type="text" placeholder='muscles' />
                     </div>
                     <textarea className='notes' type="text" placeholder='Additional notes'/>
                 </div>
-                <button>submit</button>
+                <button className='submit'>submit</button>
             </div>
             
         </div>
