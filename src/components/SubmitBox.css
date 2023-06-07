@@ -19,6 +19,7 @@ select{
 }
 .name-input{
     margin-left: 7px;
+    width: 133px;
 }
 
 .time{
@@ -71,4 +72,43 @@ button{
     margin-top: 10px;
     height: 60px;
     width: 230px;
+}
+
+.category-name{
+    display: flex;
+}
+.dropdown-text-box{
+    height: 27px;
+    width: 98px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-family: 'Bungee';
+}
+.open-categories{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 30px;
+}
+.droptions{
+    position: absolute
+}
+.droption{
+text-align: start;
+color: gray;
+border: 1px solid gray;
+background-color: rgb(237, 236, 236);
+margin-left: 2px;
+width: 100px;
+padding: 3px 0px 3px 9px;
+font-size: 13px;
+}
+.droption:hover{
+    color: black;
+    background-color: white;
+}
+.final-drop{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
