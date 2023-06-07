@@ -18,11 +18,10 @@
     width:24px;
     height:24px;
     background-color: gray;
-    border: 1px solid black;
     z-index: 2;
 }
 .body-part:hover{
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 .head{
     left: 151px;
@@ -35,70 +34,69 @@
     left: 144px;
     width: 60px;
     height:60px;
-    top:20px;
+    top:21px;
 }
 .heart{
-    left:173px;
-    top: -34px;
+    left:171px;
+    top: -33px;
     border-radius: 40%;
-    border: 2px solid black;
 }
 .upper-arm-l{
-    left: 118px;
-    top: -70px;
+    left: 117px;
+    top: -67px;
     height: 55px;
     border-top-left-radius: 12px;
 }
 .upper-arm-r{
-    left: 206px;
-    top: -127px;
+    left: 207px;
+    top: -122px;
     height: 55px;
     border-top-right-radius: 12px;
 }
 .forearm-l{
-    left: 118px;
-    top: -127px;
+    left: 117px;
+    top: -120px;
     height: 45px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 .forearm-r{
-    left: 206px;
-    top: -174px;
+    left: 207px;
+    top: -165px;
     height: 45px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 .abs{
     left: 144px;
-    top: -216px;
+    top: -205px;
     width:60px;
     height: 38px;
 }
 .upper-leg-l{
     left: 144px;
-    top: -216px;
-    width: 29px;
+    top: -203px;
+    width: 27px;
     height: 55px;
 }
 .upper-leg-r{
-    left: 175px;
-    top: -273px;
-    width: 29px;
+    left: 177px;
+    top: -258px;
+    width: 27px;
     height: 55px;
 }
 .lower-leg-l{
     left: 144px;
-    top: -273px;
-    width: 29px;
+    top: -256px;
+    width: 27px;
     height: 55px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 14px;
 }
 .lower-leg-r{
-    left: 175px;
-    top: -330px;
-    width: 29px;
+    left: 177px;
+    top: -311px;
+    width: 27px;
     height: 55px;
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 15px;

@@ -69,49 +69,122 @@ const BodyHeatmap = () => {
         return `rgb(${rgbValue},${rgbValue},${rgbValue})`
     }
 
-    let displayscale = part => {
+    const displayscale = part => {
         if (bodySelection == part)
-            return `1.1`
+            return `1.05`
+        return '1'
+    }
+
+    const displayOutline = part => {
+        if (bodySelection == part)
+            return '2px solid rgb(0, 104, 195)'
+        return 'none'
+    }
+
+    const displayOnTop = part => {
+        if (bodySelection == part)
+            return 98
     }
     
     return (
         <div className='body-heatmap'>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.head), scale: displayscale('head') }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.head),
+                scale: displayscale('head'),
+                outline: displayOutline('head'),
+                zIndex: displayOnTop('head')
+            }}
                 className="body-part head"
                 onClick={()=>selectForInfo('head')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.chest), scale: displayscale('chest') }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.chest),
+                scale: displayscale('chest'),
+                outline:displayOutline('chest'),
+                zIndex: displayOnTop('chest')
+            }}
                 className="body-part chest"
                 onClick={()=>selectForInfo('chest')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.heart), scale: displayscale('heart')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.heart),
+                scale: displayscale('heart'),
+                border:bodySelection=='heart'?'2px solid rgb(0, 104, 195)':'2px solid black',
+                zIndex: 99
+            }}
                 className="body-part heart"
                 onClick={()=>selectForInfo('heart')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.upperArms), scale: displayscale('upper arms')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.upperArms),
+                scale: displayscale('upper arms'),
+                outline:displayOutline('upper arms'),
+                zIndex: displayOnTop('upper arms')
+            }}
                 className="body-part upper-arm-l"
                 onClick={()=>selectForInfo('upper arms')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.upperArms), scale: displayscale('upper arms')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.upperArms),
+                scale: displayscale('upper arms'),
+                outline:displayOutline('upper arms'),
+                zIndex: displayOnTop('upper arms')
+            }}
                 className="body-part upper-arm-r"
                 onClick={()=>selectForInfo('upper arms')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.forearms), scale: displayscale('forearms')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.forearms),
+                scale: displayscale('forearms'),
+                outline:displayOutline('forearms'),
+                zIndex: displayOnTop('forearms')
+            }}
                 className="body-part forearm-l"
                 onClick={()=>selectForInfo('forearms')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.forearms), scale: displayscale('forearms')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.forearms),
+                scale: displayscale('forearms'),
+                outline:displayOutline('forearms'),
+                zIndex: displayOnTop('forearms')
+            }}
                 className="body-part forearm-r"
                 onClick={()=>selectForInfo('forearms')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.abs), scale: displayscale('abs')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.abs),
+                scale: displayscale('abs'),
+                outline:displayOutline('abs'),
+                zIndex: displayOnTop('abs')
+            }}
                 className="body-part abs"
                 onClick={()=>selectForInfo('abs')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.upperLegs), scale: displayscale('upper legs')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.upperLegs),
+                scale: displayscale('upper legs'),
+                outline:displayOutline('upper legs'),
+                zIndex: displayOnTop('upper legs')
+            }}
                 className="body-part upper-leg-l"
                 onClick={()=>selectForInfo('upper legs')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.upperLegs), scale: displayscale('upper legs')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.upperLegs),
+                scale: displayscale('upper legs'),
+                outline: displayOutline('upper legs'),
+                zIndex: displayOnTop('upper legs')
+            }}
                 className="body-part upper-leg-r"
                 onClick={()=>selectForInfo('upper legs')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.lowerLegs), scale: displayscale('lower legs')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.lowerLegs),
+                scale: displayscale('lower legs'),
+                outline:displayOutline('lower legs'),
+                zIndex: displayOnTop('lower legs')
+            }}
                 className="body-part lower-leg-l"
                 onClick={()=>selectForInfo('lower legs')}></div>
-            <div style={{ backgroundColor: convertToHeat(bodyParts.lowerLegs), scale: displayscale('lower legs')  }}
+            <div style={{
+                backgroundColor: convertToHeat(bodyParts.lowerLegs),
+                scale: displayscale('lower legs'),
+                outline: displayOutline('lower legs'),
+                zIndex: displayOnTop('lower legs')
+            }}
                 className="body-part lower-leg-r"
                 onClick={() => selectForInfo('lower legs')}></div>
+            
             <div className='bg'
                 onClick={() => selectForInfo('')}></div>
         </div>
