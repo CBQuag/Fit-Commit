@@ -24,9 +24,9 @@ function App() {
   )
   
   function datediff(first, second) {
-    let fDate=new Date(first)
-    console.log(fDate.getDate())
-    return Math.round((second - first) / (1000 * 60 * 60 * 24));
+    let fDate = new Date(first)
+    let cleanFDate=new Date(fDate.getFullYear(), fDate.getMonth(), fDate.getDate())
+    return Math.round((second - cleanFDate.getTime()) / (1000 * 60 * 60 * 24));
   }
 
   function selectForInfo(info) {
