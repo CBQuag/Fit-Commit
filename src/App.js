@@ -4,45 +4,27 @@ import Header from './components/Header';
 import MainArea from './components/MainArea';
 import FitnessData from './components/FitnessData'
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 
 function App() {
 
+  if (!localStorage.getItem('workouts'))
+    localStorage.setItem('workouts', JSON.stringify([]))
+
   let date1 = new Date(2023, 5, 4);
   let date2 = new Date(2023, 5, 3);
   let date3 = new Date(2023, 5, 1);
-  const [bodySelection, setBodyPart]=useState('')
-  const [fitData, setFitData] = useState([
-    {
-      time: date1.toString(),
-      category: 'abs',
-      muscles:['lower abs'],
-      title: 'crunches',
-      duration: 9,
-      notes:'basic crunches'
-    },
-    {
-      time: date2.toString(),
-      category: 'upper arms',
-      muscles:['biceps'],
-      title: 'very long title this is a long title this is to test long titles',
-      duration: 247,
-      notes: 'idk'
-    },
-    {
-      time: date3.toString(),
-      category: 'upper legs',
-      muscles:['thigh'],
-      title: 'regular title',
-      duration: 120,
-      notes: 'idk'
-    }
-  ])
+  const [bodySelection, setBodyPart] = useState('')
+  let workouts = JSON.parse(localStorage.getItem('workouts'))
+  if (!workouts)
+    workouts = []
+  const [fitData, setFitData] = useState(
+    workouts
+  )
   
   function datediff(first, second) {
-    let convertedDate = new Date(first)
-    return Math.round((second - convertedDate) / (1000 * 60 * 60 * 24))-1;
+    return Math.round((second - first) / (1000 * 60 * 60 * 24));
   }
 
   function selectForInfo(info) {

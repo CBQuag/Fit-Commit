@@ -8,8 +8,6 @@ const Log = (props) => {
 
     const convertDate = date => {
         let daysSince = datediff(date, Date.now())
-        if (daysSince < 0)
-            return `Invalid Date`
         if (daysSince < 1)
             return `Today`
         if (daysSince == 1)

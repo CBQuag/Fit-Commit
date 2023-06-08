@@ -37,14 +37,25 @@ const SubmitBox = (props) => {
         if ((!hours && !minutes)||!name||!category)
             return setError('missing fields!')
         setError('')
-        setWorkout({
+        console.log((hours ? (parseInt(hours) * 60) : 0))
+        let convertHours = hours ? (parseInt(hours) * 60) : 0
+        let convertMinutes = minutes ? parseInt(minutes) : 0
+        let convertDuration = convertHours + convertMinutes
+        
+        let workout={
             time: Date.now(),
             category: category,
-            name: name,
-            duration: (parseInt(hours)*60)+parseInt(minutes),
+            title: name,
+            duration: convertDuration,
             muscles: muscles,
             notes: notes
-        })
+        }
+        
+        let workouts = JSON.parse(localStorage.getItem('workouts'))
+        workouts.push(workout)
+        localStorage.setItem('workouts', JSON.stringify(workouts))
+        console.log(localStorage.workouts)
+        window.location.reload()
     }
     
     const clearInput = () => {
