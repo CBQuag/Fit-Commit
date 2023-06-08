@@ -4,4 +4,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+@media (max-width:375px)  {
+    .main-content{
+        transform: scale(0.95);
+    }
+}
+@media (max-width:350px)  {
+    .main-content{
+        transform: scale(0.90);
+    }
+}
+@media (max-width:325px)  {
+    .main-content{
+        transform: scale(0.85);
+    }
 }
