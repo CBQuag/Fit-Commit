@@ -39,7 +39,7 @@ const BodyHeatmap = () => {
                 case 'chest':
                     bodyParts.chest+=log.duration;
                     break;
-                case 'heart':
+                case 'cardio':
                     bodyParts.heart += log.duration;
                     break;
                 case 'upper arms':
