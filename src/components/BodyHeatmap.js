@@ -83,7 +83,7 @@ const BodyHeatmap = () => {
 
     const displayOnTop = part => {
         if (bodySelection == part)
-            return 98
+            return 2
     }
     
     return (
@@ -108,7 +108,7 @@ const BodyHeatmap = () => {
                 backgroundColor: convertToHeat(bodyParts.heart),
                 scale: displayscale('heart'),
                 border:bodySelection=='heart'?'2px solid rgb(0, 104, 195)':'2px solid black',
-                zIndex: 99
+                zIndex: 3
             }}
                 className="body-part heart"
                 onClick={()=>selectForInfo('heart')}></div>

@@ -9,7 +9,8 @@ const LogArea = () => {
     const [content, setContent] = useState([])
     
     useEffect(() => {
-       setContent(bodySelection?fitData.filter(data=>(data.category==bodySelection)):fitData) 
+        setContent(bodySelection ? fitData.filter(data =>
+            (data.category == bodySelection == 'heart' ? 'cardio' : bodySelection)) : fitData) 
     },[bodySelection,fitData])
     
     return (
