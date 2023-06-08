@@ -14,7 +14,7 @@ const BodyHeatmap = () => {
             return;
         setBodyData(fitData)
         setIntensityByMinutes(180)
-    }, [])
+    }, [fitData])
 
     let bodyParts = {
         head: 0,

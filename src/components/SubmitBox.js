@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './SubmitBox.css'
+import FitnessData from './FitnessData'
 
 const SubmitBox = (props) => {
+
+    const { setFitData } = useContext(FitnessData)
 
     const [details, setDetailsActive] = useState(['none', 'More'])
     const [categories, setCategoriesOpen] = useState(['none', '+'])
@@ -37,7 +40,6 @@ const SubmitBox = (props) => {
         if ((!hours && !minutes)||!name||!category)
             return setError('missing fields!')
         setError('')
-        console.log((hours ? (parseInt(hours) * 60) : 0))
         let convertHours = hours ? (parseInt(hours) * 60) : 0
         let convertMinutes = minutes ? parseInt(minutes) : 0
         let convertDuration = convertHours + convertMinutes
@@ -54,8 +56,8 @@ const SubmitBox = (props) => {
         let workouts = JSON.parse(localStorage.getItem('workouts'))
         workouts.push(workout)
         localStorage.setItem('workouts', JSON.stringify(workouts))
-        console.log(localStorage.workouts)
-        window.location.reload()
+        setFitData(workouts)
+        clearInput()
     }
     
     const clearInput = () => {
@@ -65,6 +67,7 @@ const SubmitBox = (props) => {
         setMinutes('')
         setMuscles([])
         setNotes('')
+        setError('')
     }
 
     useEffect(() => {
@@ -141,7 +144,9 @@ const SubmitBox = (props) => {
                 </div>
                 <button className='submit' onClick={()=>handleSubmit()}>submit</button>
             </div>
-            {err}
+            <div className='error-box'>
+                {err}
+            </div>
         </div>
     )
 }

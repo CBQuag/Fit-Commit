@@ -12,7 +12,7 @@ const PointsDisplay = () => {
         if (!fitData[0])
             return
         determinePoints(fitData)
-    },[])
+    },[fitData])
     
     const determinePoints = data => {
         let totalPoints = data.reduce((partialSum, a) => partialSum + a.duration, 0)

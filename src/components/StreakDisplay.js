@@ -17,7 +17,7 @@ const StreakDisplay = () => {
             return
         switchTheLights(fitData) 
         getStreak(fitData)   
-    },[])
+    },[fitData])
     
     const switchTheLights = data => {
         let daysSince = datediff(data[0].time, Date.now())

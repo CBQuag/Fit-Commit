@@ -10,7 +10,7 @@ const LogArea = () => {
     
     useEffect(() => {
        setContent(bodySelection?fitData.filter(data=>(data.category==bodySelection)):fitData) 
-    },[bodySelection])
+    },[bodySelection,fitData])
     
     return (
         <div className='log-area'>
