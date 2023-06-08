@@ -111,13 +111,13 @@ const SubmitBox = (props) => {
                 Duration 
                 <div className='inner-time-display'>
                     <input className='time'
-                        type="text"
+                        type="number"
                         placeholder='00'
                         value={hours}
                         onInput={e=>setHours(e.target.value)}
                     />:
                     <input className='time'
-                        type="text"
+                        type="number"
                         placeholder='00'
                         value={minutes}
                         onInput={e=>setMinutes(e.target.value)}
