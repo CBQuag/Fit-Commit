@@ -54,7 +54,7 @@ const SubmitBox = (props) => {
         }
         
         let workouts = JSON.parse(localStorage.getItem('workouts'))
-        workouts.push(workout)
+        workouts.unshift(workout)
         localStorage.setItem('workouts', JSON.stringify(workouts))
         setFitData(workouts)
         clearInput()
