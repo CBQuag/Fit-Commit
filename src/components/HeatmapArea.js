@@ -10,7 +10,6 @@ const HeatmapArea = () => {
         <div className="heatmap-area">
             <div className='heatmap-items'>
                 <CalendarHeatmap />
-                {/* <GraphHeatmap /> */}
                 <BodyHeatmap/>
             </div>         
         </div>

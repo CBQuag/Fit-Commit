@@ -21,11 +21,11 @@ function App() {
   )
   
   function datediff(first, second) {
-    let fDate = new Date(first)
+    let fDate = new Date(first) 
     let sDate = new Date(second)
     let cleanFDate = new Date(fDate.getFullYear(), fDate.getMonth(), fDate.getDate())
     let cleanSDate=new Date(sDate.getFullYear(), sDate.getMonth(), sDate.getDate())
-    return Math.round((cleanSDate - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) );
+    return Math.round((cleanSDate.getTime() - cleanFDate.getTime()) / (1000 * 60 * 60 * 24) );
   }
 
   function selectForInfo(info) {

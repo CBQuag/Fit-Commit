@@ -1,5 +1,6 @@
 import './CalendarHeatmap.css'
 import Calendar from 'react-calendar'
+import CalendarArea from './CalendarArea'
 // import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
 
@@ -10,7 +11,7 @@ const CalendarHeatmap = () => {
     return (
         <div className="calendar-heatmap">
             <div className='calendar-area'>
-                <Calendar onChange={onChange} value={value} />
+                <CalendarArea onChange={onChange} value={value} />
             </div>
         </div>
     )
