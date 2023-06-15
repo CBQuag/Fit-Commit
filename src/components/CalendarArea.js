@@ -26,7 +26,7 @@ const CalendarArea = () => {
         
         for (let x = carryOver; x <= lastMonth; x++){
             const oneDay = new Date(year, month-1, x)
-            days.push({ day: oneDay, color: ['black','gray'] })
+            days.push({ day: oneDay, color: ['black','gray',`none`] })
         }
         for (let x = 1; x <= monthTotal; x++){
             const oneDay = new Date(year, month, x)
@@ -36,11 +36,11 @@ const CalendarArea = () => {
                     .reduce(
                         (sum, a) =>sum + a.duration, 0);
 
-            days.push({ day: oneDay, color: [`rgb(${0},${50+colorNum},${128+colorNum})`,''] })
+            days.push({ day: oneDay, color: [`rgb(${0},${50+colorNum},${128+colorNum})`,``,colorNum>0?`2px solid white`:`none`] })
         }
         for (let x = 1; x < 7 - lastDay.getDay(); x++){
             const oneDay = new Date(year, month, x)
-            days.push({ day: oneDay, color: ['black', 'gray'] })
+            days.push({ day: oneDay, color: ['black', 'gray',`none`] })
         }
         setDayList(days)
     }
@@ -66,8 +66,8 @@ const CalendarArea = () => {
                     <div className='day' key={index}
                         style={{
                             backgroundColor: day.color[0],
-                            color:day.color[1]
-
+                            color:day.color[1],
+                            outline:day.color[2]
                         }}>
                         {day.day.getDate()}
                     </div>)):null
