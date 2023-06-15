@@ -4,7 +4,8 @@ import FitnessData from './FitnessData';
 
 const CalendarArea = () => {
 
-    const intensity=2
+    const intensity = 2
+    const rgb=[0,64,128]
     
     const [dayList, setDayList] = useState([])
     const [monthChange, changeMonth] = useState(0)
@@ -22,6 +23,7 @@ const CalendarArea = () => {
         const firstDay = new Date(year, month, 1);
         const lastDay=new Date(year,month,monthTotal)
         const lastMonth = daysInMonth(year, month);
+        
         let days = [];
 
         const carryOver = lastMonth - firstDay.getDay() + 1;
@@ -41,7 +43,9 @@ const CalendarArea = () => {
             days.push({
                 day: oneDay,
                 color: [
-                    `rgb(${0+(colorNum)*intensity},${64 + (colorNum*(3/4))*intensity},${128 + (colorNum/2)*intensity})`,
+                    `rgb(${rgb[0] + (colorNum * ((256 - rgb[0]) / 256)) * intensity},
+                    ${rgb[1] + (colorNum * ((256 - rgb[1]) / 256)) * intensity},
+                    ${rgb[2] + (colorNum * ((256 - rgb[2]) / 256)) * intensity})`,
                     ``,
                     colorNum > 0 ? `2px solid white` : `${datediff(oneDay,Date.now())==0?'2px solid gray':'none'}`]
             })
