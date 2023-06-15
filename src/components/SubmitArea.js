@@ -16,7 +16,7 @@ const SubmitArea = () => {
         <div>
             <div className="submit-area" onClick={() => switchActive()}>
                 <div></div>
-                <div>Submit</div>
+                <div>Add Workout</div>
                 <div>{active[1]} </div>
             </div>
             <SubmitBox isActive={active} />

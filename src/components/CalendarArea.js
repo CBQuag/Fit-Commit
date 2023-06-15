@@ -55,7 +55,7 @@ const CalendarArea = () => {
     
     useEffect(() => {
         drawCalendar(Date.now())    
-    }, [])
+    }, [fitData])
     useEffect(() => {
         const dateObj = new Date();
         const changedDate = new Date(dateObj.getFullYear(), dateObj.getMonth() + monthChange, 1)
@@ -85,7 +85,7 @@ const CalendarArea = () => {
                 {dayList[0]?dayList.map((day, index) => (
                     <div className='day' key={index}
                         style={{
-                            backgroundColor: day.color[0],
+                            backgroundColor:day.color[0],
                             color:day.color[1],
                             outline:day.color[2]
                         }}>
