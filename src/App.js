@@ -17,7 +17,32 @@ function App() {
   if (!workouts)
     workouts = []
   const [fitData, setFitData] = useState(
-    workouts
+    [
+      {
+      category: 'cardio',
+      duration: 20,
+      muscles: [],
+      notes:'',
+      time: 1686715200000,
+      title:'running'
+      },
+      {
+        category: 'abs',
+        duration: 46,
+        muscles: [],
+        notes:'',
+        time: 1686628800000,
+        title:'Ab workouts'
+      },
+      {
+        category: 'cardio',
+        duration: 46,
+        muscles: [],
+        notes:'',
+        time: 1686456000000,
+        title:'marathon'
+        },
+    ]
   )
   
   function datediff(first, second) {

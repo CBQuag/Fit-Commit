@@ -43,7 +43,7 @@ const CalendarArea = () => {
                 color: [
                     `rgb(${0+(colorNum)*intensity},${64 + (colorNum*(3/4))*intensity},${128 + (colorNum/2)*intensity})`,
                     ``,
-                    colorNum > 0 ? `2px solid white` : `none`]
+                    colorNum > 0 ? `2px solid white` : `${datediff(oneDay,Date.now())==0?'2px solid gray':'none'}`]
             })
         }
         for (let x = 1; x < 7 - lastDay.getDay(); x++){
