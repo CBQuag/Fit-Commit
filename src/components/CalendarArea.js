@@ -1,35 +1,80 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './CalendarArea.css'
+import FitnessData from './FitnessData';
 
 const CalendarArea = () => {
     
-    const[dayList,setDayList]=useState([])
+    const [dayList, setDayList] = useState([])
+    const [monthChange, changeMonth] = useState(0)
+    const {fitData, datediff}=useContext(FitnessData)
     
     const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
+    const monthNames=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']
+
     const drawCalendar = (dateInt) => {
         const date=new Date(dateInt)
         const year = date.getFullYear();
-        const month= date.getMonth() + 1
-        const monthTotal = daysInMonth(year, month);
+        const month= date.getMonth()
+        const monthTotal = daysInMonth(year, month + 1);
+
+        const firstDay = new Date(year, month, 1);
+        const lastDay=new Date(year,month,monthTotal)
+        const lastMonth = daysInMonth(year, month);
         let days = [];
-        for (let x = 1; x <= monthTotal; x++){
-            const oneDay=new Date(`${year} ${month} ${x}`)
-            days.push(oneDay)
+
+        const carryOver = lastMonth - firstDay.getDay() + 1;
+        
+        for (let x = carryOver; x <= lastMonth; x++){
+            const oneDay = new Date(year, month-1, x)
+            days.push({ day: oneDay, color: ['black','gray'] })
         }
+        for (let x = 1; x <= monthTotal; x++){
+            const oneDay = new Date(year, month, x)
+            
+            const colorNum = [...fitData.filter(
+                fit =>datediff(oneDay.getTime(), fit.time) == 0)]
+                    .reduce(
+                        (sum, a) =>sum + a.duration, 0);
+
+            days.push({ day: oneDay, color: [`rgb(${0},${50+colorNum},${128+colorNum})`,''] })
+        }
+        for (let x = 1; x < 7 - lastDay.getDay(); x++){
+            const oneDay = new Date(year, month, x)
+            days.push({ day: oneDay, color: ['black', 'gray'] })
+        }
+        console.log(monthChange)
         setDayList(days)
     }
     
     useEffect(() => {
         drawCalendar(Date.now())    
     }, [])
+    useEffect(() => {
+        const dateObj=new Date(Date.now())
+        const changedDate=new Date(dateObj.getFullYear(),dateObj.getMonth()+monthChange,1)
+
+        drawCalendar(changedDate)    
+    }, [monthChange])
 
     return (
-        <div className='day-area'>
-            {dayList.map((day, index) => (
-                <div className='day' key={index}>
-                    {day.getDate()}
-                </div>))
-            }
+        <div>
+            <div className='month-area'>
+                <button onClick={()=>changeMonth(monthChange-1)} className='navigation nav-left'> <img className='nav-icon-left' src={require('../triangle.png')} alt="left" /> </button>
+                <h2>{dayList[0]?monthNames[dayList[10].day.getMonth()]:null}</h2>
+                <button onClick={()=>changeMonth(monthChange+1)} className='navigation nav-right'> <img className='nav-icon-right' src={require('../triangle.png')} alt="left" /> </button>
+            </div>
+            <div className='day-area'>
+                {dayList[0]?dayList.map((day, index) => (
+                    <div className='day' key={index}
+                        style={{
+                            backgroundColor: day.color[0],
+                            color:day.color[1]
+
+                        }}>
+                        {day.day.getDate()}
+                    </div>)):null
+                }
+            </div>
         </div>
     )
 }
