@@ -9,12 +9,27 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 function App() {
 
-  const workoutData = [{
+  const getDaysBefore = days => {
+    let ObjDate = new Date(Date.now())
+    let clearDate=new Date(ObjDate.getFullYear(), ObjDate.getMonth(), ObjDate.getDate())
+    return ObjDate-(days*(1000*60*60*24))
+  }
+
+  const workoutData = [
+    {
+      category: 'chest',
+      duration: 7,
+      muscles: [],
+      notes: '',
+      time: getDaysBefore(1),
+      title: 'push ups'
+    },
+    {
     category: 'upper arms',
     duration: 20,
     muscles: [],
     notes:'',
-    time: 1686715200000,
+    time: getDaysBefore(2),
     title:'bicep curls'
     },
     {
@@ -22,7 +37,7 @@ function App() {
       duration: 46,
       muscles: [],
       notes:'',
-      time: 1686628800000,
+      time: getDaysBefore(4),
       title:'Ab workouts'
     },
     {
@@ -30,9 +45,10 @@ function App() {
       duration: 46,
       muscles: [],
       notes:'',
-      time: 1686456000000,
+      time: getDaysBefore(5),
       title:'marathon'
-    }
+    },
+    
   ]
 
   if (!localStorage.getItem('workouts'))
